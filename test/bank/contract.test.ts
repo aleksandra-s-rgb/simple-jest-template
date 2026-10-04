@@ -16,7 +16,14 @@ describe("Premium", () =>{
       10000,
       4,
     )
-    loanContract = new LoanContract('B123', 'Alice Bloom', false,5000, 500, 12)
+    loanContract = new LoanContract(
+      'B123',
+      'Alice Bloom',
+      false,
+      5000,
+      500,
+      12
+    )
     insuranceContract = new InsuranceContract(
       'C123',
       'Varvara Chi',
@@ -52,9 +59,23 @@ describe("Premium", () =>{
   test('The deposit contract is activated', () => {
     expect(depositContract.activate()).toBe(true)
   })
+  test('The loan contract is activated', () => {
+    expect(loanContract.activate()).toBe(true)
+  })
+  test('The insurance contract is activated', () => {
+    expect(insuranceContract.activate()).toBe(true)
+  })
   test('The deposit contract is deactivated', () => {
     depositContract.deactivate();
     expect(depositContract.deactivate()).toBe(false)
+  })
+  test('The loan contract is deactivated', () => {
+    loanContract.deactivate()
+    expect(loanContract.deactivate()).toBe(false)
+  })
+  test('The insurance contract is deactivated', () => {
+    insuranceContract.deactivate()
+    expect(insuranceContract.deactivate()).toBe(false)
   })
   test(`The total deposit amount is correct`, () => {
     expect(depositContract.calculateInterest()).toBe(10400);
