@@ -90,6 +90,7 @@ describe("Premium", () =>{
     expect(depositContract.clientName).toBe('Bill Ray')
     expect(depositContract.amount).toBe(10000)
     expect(depositContract.interestRate).toBe(4)
+    expect(depositContract.isActive).toBe(true)
   })
   test('All data for Loan contract is correct', () => {
     expect(loanContract.contractId).toBe('B123')
@@ -97,6 +98,7 @@ describe("Premium", () =>{
     expect(loanContract.loanTermMonths).toBe(12)
     expect(loanContract.monthlyPayment).toBe(500)
     expect(loanContract.loanAmount).toBe(5000)
+    expect(depositContract.isActive).toBe(true)
   })
   test('All data for Insurance contract is correct', () => {
     expect(insuranceContract.contractId).toBe('C123')
@@ -104,6 +106,7 @@ describe("Premium", () =>{
     expect(insuranceContract.premium).toBe(100)
     expect(insuranceContract.insuranceType).toBe('health')
     expect(insuranceContract.termYears).toBe(5)
+    expect(depositContract.isActive).toBe(true)
   })
 
 
