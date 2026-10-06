@@ -11,6 +11,6 @@ export class DepositContract extends BaseContract{
 
   }
   calculateInterest(): number{
-    return this.amount * (1 + (this.interestRate / 100) * (365 / 365));
+    return this.amount * this.interestRate / 100;
   }
 }
